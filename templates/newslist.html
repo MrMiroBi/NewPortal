@@ -1,0 +1,14 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title%}
+News
+{% endblock title%}
+
+{% block content%}
+<h1> Новости </h1>
+{% for news in newslist %}
+    {% if news.post_type == 'NS'%}
+        {{news}}
+    {% endif %}
+{%endfor%}
+{% endblock content%}

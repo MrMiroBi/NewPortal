@@ -1,5 +1,5 @@
 news = 'NS'
-article = 'Ar'
+article = 'AR'
 
 types = [
     (news,'Новости'),

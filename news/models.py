@@ -54,6 +54,10 @@ class Post(models.Model):
         return f'{self.text[:124]}...' if len(self.text) > 124 else self.text
 
 
+    def __str__(self):
+        return f'Author - {self.author.author}: {self.head}'
+
+
 class PostCat(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
