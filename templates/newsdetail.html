@@ -4,5 +4,11 @@ Newdatail
 {% endblock title %}
 
 {% block content %}
-{{newsdetail}}
+<h1> Новость </h1>
+<h2> {{newsdetail.date|date:"j b Y"}} </h2>
+<table>
+    <tr> {{newsdetail.head}} </tr>
+</table>
+<hr>
+{{newsdetail.text}}
 {% endblock content %}

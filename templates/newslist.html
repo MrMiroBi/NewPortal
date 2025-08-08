@@ -5,10 +5,18 @@ News
 {% endblock title%}
 
 {% block content%}
+
 <h1> Новости </h1>
+<h2> Колличесто новостей: {{newslist|length}}</h2>
+
 {% for news in newslist %}
-    {% if news.post_type == 'NS'%}
-        {{news}}
-    {% endif %}
-{%endfor%}
+    <table>
+        <tr>
+            <td> {{news.head}} </td>
+            <td> {{news.date|date:" j b Y "}} </td>
+            <td> {{news.text|truncatewords:20}} </td>
+        </tr>
+    </table>
+{% endfor %}
+
 {% endblock content%}
