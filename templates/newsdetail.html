@@ -1,4 +1,6 @@
 {% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
 {% block title %}
 Newdatail
 {% endblock title %}
@@ -7,8 +9,8 @@ Newdatail
 <h1> Новость </h1>
 <h2> {{newsdetail.date|date:"j b Y"}} </h2>
 <table>
-    <tr> {{newsdetail.head}} </tr>
+    <tr> {{newsdetail.head|censor}} </tr>
 </table>
 <hr>
-{{newsdetail.text}}
+{{newsdetail.text|censor}}
 {% endblock content %}
