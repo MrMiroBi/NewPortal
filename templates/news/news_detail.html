@@ -7,10 +7,10 @@ Newdatail
 
 {% block content %}
 <h1> Новость </h1>
-<h2> {{newsdetail.date|date:"j b Y"}} </h2>
+<h2> {{news_detail.date|date:"j b Y"}} </h2>
 <table>
-    <tr> {{newsdetail.head|censor}} </tr>
+    <tr> {{news_detail.head|censor}} </tr>
 </table>
 <hr>
-{{newsdetail.text|censor}}
+{{news_detail.text|censor}}
 {% endblock content %}

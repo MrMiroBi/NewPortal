@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from .helper import types, news
 from django.utils import timezone
+from django.urls import reverse
 
 
 class Author(models.Model):
@@ -52,6 +53,9 @@ class Post(models.Model):
 
     def preview(self):
         return f'{self.text[:124]}...' if len(self.text) > 124 else self.text
+
+    def get_absolute_url(self):
+        return reverse('news_detail', args=[str(self.id)])
 
 
     def __str__(self):
